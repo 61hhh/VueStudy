@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-text内容</title>
+</head>
+<body>
+    <div id="app">
+        <h2 v-text="message"></h2>
+        <h2 v-text="message + '这是内部单引号' "></h2>
+        <h2>我是h2标签原本的内容,会被h2标签里的v-text内容替换</h2>
+        <h2 v-text="info">我是h2标签原本的内容,会被h2标签里的v-text内容替换</h2>
+        <h2>部分替换在标签作用域内使用差值表达式 ：{{repalce}}</h2>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        var app = new Vue({
+        el: '#app',
+        data: {
+            message:"超神辣",
+            info:"我是使用v-text替换h2标签的内容！",
+            repalce:"部分替换的内容"
+        }
+        })
+    </script>
+
+</body>
+</html>

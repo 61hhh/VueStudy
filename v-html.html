@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-html</title>
+</head>
+<body>
+    <div id="app">
+        <h2>如果是普通文本v-html和v-text没有差异，如果是HTML结构会被解析为标签</h2>
+        <p v-html="content"></p>
+        <p v-text="content"></p>
+    </div>
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app=new Vue({
+            el:"#app",
+            data:{
+                content:"salute61",
+                content:"<a href='http://salute61.top/'>我的Bolg</a>"
+            }
+        })
+    </script>
+</body>
+</html>

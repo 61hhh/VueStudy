@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>v-on指令可以绑定元素;可以简写为@;事件函数定义在methods中;可以使用this.data访问data中的数据</h2>
+        <input type="button" value="v-on指令" v-on:click="doIT">
+        <input type="button" value="v-on简写" @click="doIT">
+        <input type="button" value="双击事件" @dblclick="dbdo">
+        <h3 @click="changbeef">{{food}}</h3>
+    </div>
+
+
+
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app= new Vue({
+            el:"#app",
+            data:{
+                food:"牛肉"
+            },
+            methods:{
+                doIT:function(){
+                    alert("do it");
+                },
+                dbdo:function(){
+                    alert("双击的do it");
+                },
+                changbeef:function(){
+                    this.food+="永远滴神！";
+                }
+            }
+        })
+        
+    </script>
+</body>
+</html>

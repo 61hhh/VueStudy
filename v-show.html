@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-show</title>
+</head>
+<body>
+    <div id="app">
+        <h2>v-show根据真假切换元素显示状态；原理是修饰display；数据改变实时显示</h2>
+        <img v-show="isShow" src="http://5b0988e595225.cdn.sohucs.com/images/20170923/38d6b53f5445418a8a07b50d08960c0c.jpeg" alt="" width="30%"height="30%">
+        <input type="button" value="切换图片显示" @click="changeShow">
+        <img v-show="age>=18" src="http://5b0988e595225.cdn.sohucs.com/images/20170923/38d6b53f5445418a8a07b50d08960c0c.jpeg" alt="" width="30%"height="30%">
+        <input type="button" value="累加年龄显示" @click="addAge"></input>
+    </div>
+    
+
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+        var app =new Vue({
+            el:"#app",
+            data:{
+                isShow:true,
+                age:17
+            },
+            methods:{
+                changeShow:function(){
+                    this.isShow = !this.isShow;
+                },
+                addAge:function(){
+                    this.age++;
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>
